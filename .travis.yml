@@ -2,4 +2,9 @@ language: node_js
 install: true
 script: true
 after_success:
- - scp -i "se234.pem" -r html/* ubuntu@54.255.174.42:/var/www/html/
+- scp -i "se234.pem" -r html/* ubuntu@54.255.174.42:/var/www/html/
+env:
+  global:
+    secure: SrP7o8S2nbMsbCSBJWimtkPy1bI2hUNARfJQnp372U8A2bx5/1uSh8Q4JNjsJH69lL2VuE4PvF89AU3LR4KqrCMGNri8tD0gvOOnV9hOQNUkNQMWv7agQTAgxYuaci/oUXc3PJVBfEJiij0Ubwbn6cRUdXGsUVzjv0x21JJihLYL+Li+iju9s3+ed1mIBsThdVM1miXkm3uSyukf+dyvaTTHf2TuExLqnrqMUgCCzYqyeDah5POfHk6ZVI0Vk4ALA74CrlV/iXtKkNIz4z6hIeyLS5p+qg2/3bTZnKS8jFXWq+T1V3eSM/BOMS8/7ZM1GTxWhQR1bmH+VXy6CuUktUyPKBYNLQ7oGCe6rBrGjH5zSM1+PPC3fAe1XuS/YZPltTvhVOZ3N0YJnOvOCBVTvof7YZvaNq3ZMj0ft2V9pvJSyuRVNkJi7GaWgiRsk+wJn8Uj0vjVQMXcPBDQGrhY+620tvZN8hcrvq2aIu2tuY0l/x8QAzP5SePHLceaT2VU2geG2GijoV7uoVBd55H6qr0A75UP7BiByRsyeQ73uPJrsd2BRh5kVdBN+XIiLkwuAESZwjB1OsaYf9YnxKEL0t6ujRg2nmpj849JIP9WZ9L0XlHOQYk2TShPWB1Hb7PvaLtFkDi8pNkEfha7XFC4OJlS6zF0A2lWrGPq6QIlyXM=
+before_install:
+  - openssl aes-256-cbc -k "$super_secret_password" -in super_secret.txt.enc -out super_secret.txt -d
