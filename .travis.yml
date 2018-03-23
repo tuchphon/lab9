@@ -9,7 +9,7 @@ after_success:
 before_install:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 before_script:
-- ecport DOCKER_HOST="$HOST_NAME"
+- export DOCKER_HOST="$HOST_NAME"
 service: docker
 env:
   global:
