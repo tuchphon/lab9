@@ -7,7 +7,7 @@ script:
 after_success:
 - docker run -p 8088:80 -d tuchphon/htmltest:latest
 before_install:
-- docker ligin -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 before_script:
 - ecport DOCKER_HOST="$HOST_NAME"
 service: docker
