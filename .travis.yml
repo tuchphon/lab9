@@ -2,8 +2,8 @@ language: node_js
 sudo: required
 install: true
 script:
-- docker build -t tuchphon/htmltest .
-- docker push tuchphon/htmltest
+- docker build -t $tuchphon/htmltest .
+- docker push $tuchphon/htmltest
 after_success:
 - docker stop htmltest
 - docker rm htmltest
